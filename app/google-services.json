@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "311510769830",
+    "project_id": "actifirebase",
+    "storage_bucket": "actifirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311510769830:android:e91db4a87adbaabbca1467",
+        "android_client_info": {
+          "package_name": "com.example.actividad_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311510769830-rje8bd2875cgmivv0f0k76129877dpu0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3DJNo31GPIIHMwNqrBWFo2r6kTLcU9c8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "311510769830-rje8bd2875cgmivv0f0k76129877dpu0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

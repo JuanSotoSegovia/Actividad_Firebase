@@ -84,7 +84,6 @@ public class Listado extends AppCompatActivity {
         });
 
 
-
     }
 
     public void elminarProfesionales(View view) throws InterruptedException {

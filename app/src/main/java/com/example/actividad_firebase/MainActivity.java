@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
                 databaseReference.child("Profesionales").child(p.getId()).setValue(p);
 
+                limpiarCampos();
+
                 Toast.makeText(getBaseContext(),"Profesional Agregado",Toast.LENGTH_SHORT).show();
 
             }
@@ -65,11 +67,15 @@ public class MainActivity extends AppCompatActivity {
     public void obtenerDatabase(){
         FirebaseApp.initializeApp(getBaseContext());
         firebaseDatabase = FirebaseDatabase.getInstance();
+        //persistencia de firebase para que almacene los datos hasta sin conexion a internet
+        //firebaseDatabase.setPersistenceEnabled(true);
         databaseReference = firebaseDatabase.getReference();
     }
 
-    public void agregarProfesional(View view){
-
+    public void limpiarCampos(){
+        edtNombre.setText("");
+        edtSalario.setText("");
+        edtProfesion.setText("");
     }
 
     public void Listado(View view){

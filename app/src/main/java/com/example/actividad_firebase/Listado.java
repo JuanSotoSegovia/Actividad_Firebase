@@ -33,7 +33,9 @@ public class Listado extends AppCompatActivity {
 
     Profesionales profesionalSelecter; //guardar elemento seleccionado
 
+    //mostrar datos [con esto podremoa hacaer que el listado se actualize de inmediato]
     private ArrayList<Profesionales> listaProfesionales = new ArrayList();
+    ArrayAdapter<Profesionales> arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,15 +66,19 @@ public class Listado extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                //actualizar lista
+                listaProfesionales.clear();
+
                 for(DataSnapshot op: snapshot.getChildren()){ //recorremos la cantidad profesinales
 
                     Profesionales p = op.getValue(Profesionales.class); //Guardo consulta en obj
 
                     listaProfesionales.add(p);
 
-                    ArrayAdapter ada = new ArrayAdapter(getBaseContext(), android.R.layout.simple_list_item_1, listaProfesionales);
+                    arrayAdapter = new ArrayAdapter<Profesionales>(getBaseContext(), android.R.layout.simple_list_item_1, listaProfesionales);
 
-                    listView.setAdapter(ada);
+                    listView.setAdapter(arrayAdapter);
+
                 }
 
             }
@@ -93,9 +99,6 @@ public class Listado extends AppCompatActivity {
         databaseReference.child("Profesionales").child(p.getId()).removeValue();//elimina lo seleccionado
         Toast.makeText(getBaseContext(),"Profesional Eliminado", Toast.LENGTH_SHORT).show();
 
-
-        Intent i = new Intent(getBaseContext(), Listado.class);
-        startActivity(i);
     }
 
     public void obtenerDatabase(){

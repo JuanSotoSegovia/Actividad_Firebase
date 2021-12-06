@@ -47,6 +47,6 @@ public class Profesionales {
     //metodo string para mostrar el objeto en la lista
     @Override
     public String toString() {
-        return nombre;
+        return "Nombre: "+ nombre + "\nProfesion: " + profesion + "\nSalario: " + salario;
     }
 }
